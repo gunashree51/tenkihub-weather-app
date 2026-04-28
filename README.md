@@ -63,5 +63,3 @@ A modern, interactive weather web application built using JavaScript and Open-Me
 **Gunashree S**
 
 
-
-⭐ If you like this project, consider giving it a star!
