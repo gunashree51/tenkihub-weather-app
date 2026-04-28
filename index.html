@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TenkiHub🌦️</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="Images/icon-192.png">
+<link rel="icon" type="image/png" href="Images/icon-512.png">
+<button id="installBtn" style="display:none;">📲 Install</button>
+<button id="gpsBtn">📍</button>
+</head>
+
+<body>
+<div class="weather-bg" id="weatherBg"></div>
+<div class="rain" id="rain">
+  <div class="rain-layer"></div>
+  <div class="rain-layer"></div>
+</div>
+<div class="lightning" id="lightning"></div>
+<div class="sun" id="sun"></div>
+<div class="sun-bg" id="sunBg">
+  <div class="sun-bg-layer"></div>
+  <div class="sun-bg-layer"></div>
+</div>
+<div class="clouds" id="clouds">
+  <div class="cloud-layer"></div>
+  <div class="cloud-layer"></div>
+</div>
+<div class="app">
+<div id="loader" class="loader"></div>
+<!-- HEADER -->
+<div class="header">
+  <h2>TenkiHub🌦️</h2>
+
+  <div class="search-box">
+  <input type="text" id="cityInput" placeholder="Search city... ✨">
+  <button onclick="searchCity()">🔍</button>
+<button onclick="startVoice()">🎤</button>
+</div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LEFT -->
+  <div class="left">
+
+    <div class="temp-box">
+      <h1 id="temp">--°</h1>
+      <span id="condition" class="badge">--</span>
+    </div>
+
+    <h2 id="city">--</h2>
+
+    <p class="desc">
+      Weather conditions may vary throughout the day. Stay updated and plan accordingly.
+    </p>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <div class="card">
+  <p>Wind</p>
+  <h3 id="wind">--</h3>
+
+  <div class="bars" id="windLines">
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+  <span></span><span></span>
+</div>
+</div>
+
+    <div class="card">
+      <p>Humidity</p>
+      <h3 id="humidity">--</h3>
+
+      <div class="progress">
+        <div class="fill" id="humidityBar"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p>Pressure</p>
+      <h3 id="pressure">--</h3>
+
+      <div class="progress">
+        <div class="fill" id="pressureBar"></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- WEEKLY -->
+<section class="weekly">
+<div class="weekly" id="weekly">
+
+  <div class="day">
+    <p id="day1Name">Sun</p>
+    <span id="day1Icon">☀️</span>
+    <div class="mini-graph">
+      <svg viewBox="0 0 100 40">
+        <defs>
+          <linearGradient id="grad1">
+            <stop offset="0%" stop-color="#ffd6e0"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+        </defs>
+        <polyline id="day1Graph" points="0,30 25,20 50,25 75,15 100,20"
+          fill="none" stroke="url(#grad1)" stroke-width="2"/>
+      </svg>
+    </div>
+    <p id="day1Temp">--°</p>
+  </div>
+
+  <div class="day">
+    <p id="day2Name">Mon</p>
+    <span id="day2Icon">🌤️</span>
+    <div class="mini-graph">
+      <svg viewBox="0 0 100 40">
+        <defs>
+          <linearGradient id="grad2">
+            <stop offset="0%" stop-color="#ffd6e0"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+        </defs>
+        <polyline id="day2Graph" points="0,25 25,18 50,22 75,12 100,18"
+          fill="none" stroke="url(#grad2)" stroke-width="2"/>
+      </svg>
+    </div>
+    <p id="day2Temp">--°</p>
+  </div>
+
+  <div class="day">
+    <p id="day3Name">Tue</p>
+    <span id="day3Icon">☁️</span>
+    <div class="mini-graph">
+      <svg viewBox="0 0 100 40">
+        <defs>
+          <linearGradient id="grad3">
+            <stop offset="0%" stop-color="#ffd6e0"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+        </defs>
+        <polyline id="day3Graph" points="0,28 25,22 50,20 75,18 100,20"
+          fill="none" stroke="url(#grad3)" stroke-width="2"/>
+      </svg>
+    </div>
+    <p id="day3Temp">--°</p>
+  </div>
+
+  <div class="day">
+    <p id="day4Name">Wed</p>
+    <span id="day4Icon">🌧️</span>
+    <div class="mini-graph">
+      <svg viewBox="0 0 100 40">
+        <defs>
+          <linearGradient id="grad4">
+            <stop offset="0%" stop-color="#ffd6e0"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+        </defs>
+        <polyline id="day4Graph" points="0,35 25,28 50,30 75,22 100,25"
+          fill="none" stroke="url(#grad4)" stroke-width="2"/>
+      </svg>
+    </div>
+    <p id="day4Temp">--°</p>
+  </div>
+
+  <div class="day">
+    <p id="day5Name">Thu</p>
+    <span id="day5Icon">⚡</span>
+    <div class="mini-graph">
+      <svg viewBox="0 0 100 40">
+        <defs>
+          <linearGradient id="grad5">
+            <stop offset="0%" stop-color="#ffd6e0"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+        </defs>
+        <polyline id="day5Graph" points="0,30 25,25 50,20 75,15 100,10"
+          fill="none" stroke="url(#grad5)" stroke-width="2"/>
+      </svg>
+    </div>
+    <p id="day5Temp">--°</p>
+  </div>
+
+  <div class="day">
+    <p id="day6Name">Fri</p>
+    <span id="day6Icon">☀️</span>
+    <div class="mini-graph">
+      <svg viewBox="0 0 100 40">
+        <defs>
+          <linearGradient id="grad6">
+            <stop offset="0%" stop-color="#ffd6e0"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+        </defs>
+        <polyline id="day6Graph" points="0,20 25,15 50,18 75,12 100,15"
+          fill="none" stroke="url(#grad6)" stroke-width="2"/>
+      </svg>
+    </div>
+    <p id="day6Temp">--°</p>
+  </div>
+
+  <div class="day">
+    <p id="day7Name">Sat</p>
+    <span id="day7Icon">🌤️</span>
+    <div class="mini-graph">
+      <svg viewBox="0 0 100 40">
+        <defs>
+          <linearGradient id="grad7">
+            <stop offset="0%" stop-color="#ffd6e0"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+        </defs>
+        <polyline id="day7Graph" points="0,22 25,18 50,20 75,16 100,18"
+          fill="none" stroke="url(#grad7)" stroke-width="2"/>
+      </svg>
+    </div>
+    <p id="day7Temp">--°</p>
+  </div>
+
+</div>
+</section>
+<script src="script.js"></script>
+
+</body>
+</html>
