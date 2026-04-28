@@ -2,8 +2,6 @@
 
 A modern, interactive weather web application built using JavaScript and Open-Meteo API, delivering real-time weather insights with a visually immersive and responsive UI.
 
----
-
 ## ✨ Features
 
 - 🌍 Real-time weather data (temperature, humidity, pressure, wind)
@@ -15,7 +13,6 @@ A modern, interactive weather web application built using JavaScript and Open-Me
 - ⚡ Smooth animations & transitions
 - 📲 Installable Progressive Web App (PWA) with offline support
 
----
 
 ## 🚀 Tech Stack
 
@@ -24,7 +21,6 @@ A modern, interactive weather web application built using JavaScript and Open-Me
 - JavaScript (ES6+)  
 - Open-Meteo API  
 
----
 
 ## 📸 Preview
 
@@ -37,13 +33,11 @@ A modern, interactive weather web application built using JavaScript and Open-Me
 ### 📊 Data Visualization (Wind, Humidity, Pressure)
 ![Weather UI](Images/cloud_ss.png)
 
----
 
 ## 🌐 Live Demo
 
-👉 
+👉  https://gunashree51.github.io/tenkihub-weather-app/
 
----
 
 ## 💡 Highlights
 
@@ -53,7 +47,6 @@ A modern, interactive weather web application built using JavaScript and Open-Me
 - Optimized for performance and responsiveness  
 - PWA-enabled for app-like experience  
 
----
 
 ## 📌 How It Works
 
@@ -69,6 +62,6 @@ A modern, interactive weather web application built using JavaScript and Open-Me
 
 **Gunashree S**
 
----
+
 
 ⭐ If you like this project, consider giving it a star!
