@@ -29,13 +29,13 @@ A modern, interactive weather web application built using JavaScript and Open-Me
 ## 📸 Preview
 
 ### 🌤️ Weather Dashboard
-![Weather UI](images/sun_ss.png)
+![Weather UI](Images/sun_ss.png)
 
 ### 🌧️ Dynamic Background & UI
-![Weather UI](images/rain_ss.png)
+![Weather UI](Images/rain_ss.png)
 
 ### 📊 Data Visualization (Wind, Humidity, Pressure)
-![Weather UI](images/cloud_ss.png)
+![Weather UI](Images/cloud_ss.png)
 
 ---
 
